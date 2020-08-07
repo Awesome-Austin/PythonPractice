@@ -1,16 +1,18 @@
-import requests
+import praw
+
+from definitions import PRAW_CONFIG
 
 
 def create_reddit_readme(url):
-    res = requests.get(url)
-    try:
-        res.raise_for_status()
-    except Exception as e:
-        raise e
+    reddit = praw.Reddit(
+        client_id=PRAW_CONFIG['client_id'],
+        client_secret=PRAW_CONFIG["client_secret"],
+        user_agent=PRAW_CONFIG["user_agent"]
+    )
 
-    print(res.text)
+    print(reddit.read_only)
 
 
 if __name__ == '__main__':
     url = r"https://www.reddit.com/r/dailyprogrammer/comments/hrujc5/20200715_challenge_385_intermediate_the_almost/"
-    create_readme(url)
+    create_reddit_readme(url)
