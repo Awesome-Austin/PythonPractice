@@ -1,8 +1,6 @@
 #! python3
 import unittest
 
-from r_DailyProgrammer.All.C195.unittests.test_values import TEST_VALUES 
-
 
 class MyTestCase(unittest.TestCase):
     def test_something(self):
