@@ -1,4 +1,4 @@
-# [](#HardIcon) **(Hard)**: Arrows and Arrows, part 1
+# **(Hard)**: Arrows and Arrows, part 1
 
 Wednesday's challenge was released later than I wanted it to be (my fault entirely), so I'll make it up to you by posting this one early. I fear some previous hard challenges have appeared unapproachable to some people due to their logical or mathematical complexity. I aim to make a Hard challenge today which is innately simple, but will still require a Hard degree of thought (assuming you come up with the algorithm yourself.)  
 Take this grid of characters:
