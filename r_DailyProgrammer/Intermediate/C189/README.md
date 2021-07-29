@@ -22,47 +22,56 @@ When read from left to right, if successive roman numerals increase in value, yo
 
 #Restrictions
 
-I can only be subtracted from V or X
+`I` can only be subtracted from `V` or `X`
 
-X can only be subtracted from L or C
+`X` can only be subtracted from `L` or `C`
 
-C can only be subtracted from D or M
+`C` can only be subtracted from `D` or `M`
 
-Only one smaller value can be subtracted from a following larger value. (e.g. 'IIX' would be an invalid way to represent the number 8)
+Only one smaller value can be subtracted from a following larger value. (e.g. `IIX` would be an invalid way to represent the number `8`)
 
 #Examples
 
-XII = 10 + 1 + 1 = 12
+    XII = 10 + 1 + 1 = 12
 
-MDCCLXXVI = 1000 + 500 + 100 + 100 + 50 + 10 + 10 + 5 + 1 = 1776
+    MDCCLXXVI = 1000 + 500 + 100 + 100 + 50 + 10 + 10 + 5 + 1 = 1776
 
-IX = "1 from 10" = 10 - 1 = 9
+    IX = "1 from 10" = 10 - 1 = 9
 
-XCIV = "10 from 100" + "1 from 5" = (100 - 10) + (5 - 1) = 90 + 4 = 94
+    XCIV = "10 from 100" + "1 from 5" = (100 - 10) + (5 - 1) = 90 + 4 = 94
 
 #Inputs & Outputs
 
 Your program should be able to accept numbers in either integer or roman numeral format to return the other. You may want to add validation checks on the input.
-When converting to a roman numeral, the maximum number is 4999.
-When converting from a roman numeral, I,V,X,L,C,D,M are the only valid characters.
+
+When converting to a roman numeral, the maximum number is `4999`.
+
+When converting from a roman numeral, `I`, `V`, `X`, `L`, `C`, `D`, `M` are the only valid characters.
+
 You should be able to accept one or many numbers or numerals and convert to the other direction.
 
 #Challenge
 
-Some historical accounts state that roman numerals could actually go much higher than 4999. There are incredibly varied explanations and syntactical requirements for them. Some state that an over-line (vinculum) would be used over a number to multiply it by 1000, some say that you would put a curved line on either side of a number to multiply it by 1000.
+Some historical accounts state that roman numerals could actually go much higher than `4999`.
+
+There are incredibly varied explanations and syntactical requirements for them:
+ * Some state that an over-line (vinculum) would be used over a number to multiply it by `1000`
+ * Some say that you would put a curved line on either side of a number to multiply it by 1000.
+
 For the challenge, see if you can add support to your code to allow parenthesis to encapsulate parts of a number that can be multiplied by one thousand. You can nest parenthesis as well to allow for numbers that are incredibly large.
 
 #Restriction
 
-The last roman numeral digit inside a set of parenthesis can not be an "I". There are two reasons for this (1) because historical accounts claimed that confusion would happen with the curved lines that encapsulate a number to be multiplied by one thousand and (2) because the easiest way to validate your numbers is with Wolfram Alpha and they do not allow it either.
+The last roman numeral digit inside a set of parenthesis can not be an `I`. There are two reasons for this:
+    
+ 1. historical accounts claimed that confusion would happen with the curved lines that encapsulate a number to be multiplied by one thousand
+ 2. the easiest way to validate your numbers is with Wolfram Alpha and they do not allow it either.
 
 #Examples
 
-(V)M = 5*1000 + 1000 = 6000
-
-(X)MMCCCXLV = 10*1000 + 1000 + 1000 + 100 + 100 + 100 + (50 - 10) + 5 = 10000 + 2000 + 300 + 40 + 5 = 12345
-
-((XV)M)DCC = ((10 + 5) * 1000 + 1000) * 1000 + 500 + 100 + 100 = (15000 + 1000) * 1000 + 1700 = 16000000 + 1700 = 16001700
+    (V)M = 5*1000 + 1000 = 6000
+    (X)MMCCCXLV = 10*1000 + 1000 + 1000 + 100 + 100 + 100 + (50 - 10) + 5 = 10000 + 2000 + 300 + 40 + 5 = 12345
+    ((XV)M)DCC = ((10 + 5) * 1000 + 1000) * 1000 + 500 + 100 + 100 = (15000 + 1000) * 1000 + 1700 = 16000000 + 1700 = 16001700
 
 #Hints
 
@@ -71,83 +80,34 @@ http://www.wolframalpha.com/input/?i=314+in+roman+numerals
 
 #Sample Data
 ##Basic
-IV = 4
-
-
-XXXIV = 34
-
-
-CCLXVII = 267
-
-
-DCCLXIV = 764
-
-
-CMLXXXVII = 987
-
-
-MCMLXXXIII = 1983
-
-
-MMXIV = 2014
-
-
-MMMM = 4000
-
-
-MMMMCMXCIX = 4999
-
+    IV = 4
+    XXXIV = 34
+    CCLXVII = 267
+    DCCLXIV = 764
+    CMLXXXVII = 987
+    MCMLXXXIII = 1983
+    MMXIV = 2014
+    MMMM = 4000
+    MMMMCMXCIX = 4999
 
 ##Challenge
-(V) = 5000
-
-
-(V)CDLXXVIII = 5478
-
-
-(V)M = 6000
-
-
-(IX) = 9000
-
-
-(X)M = 11000
-
-
-(X)MM = 12000
-
-
-(X)MMCCCXLV = 12345
-
-
-(CCCX)MMMMCLIX = 314159
-
-
-(DLXXV)MMMCCLXVII = 578267
-
-
-(MMMCCXV)CDLXVIII = 3215468
-
-
-(MMMMCCX)MMMMCDLXVIII = 4214468
-
-
-(MMMMCCXV)CDLXVIII = 4215468
-
-
-(MMMMCCXV)MMMCDLXVIII = 4218468
-
-
-(MMMMCCXIX)CDLXVIII = 4219468
-
-
-((XV)MDCCLXXV)MMCCXVI = 16777216
-
-
-((CCCX)MMMMCLIX)CCLXV = 314159265
-
-
-((MLXX)MMMDCCXL)MDCCCXXIV = 1073741824
+    (V) = 5000       
+    (V)CDLXXVIII = 5478
+    (V)M = 6000
+    (IX) = 9000
+    (X)M = 11000
+    (X)MM = 12000
+    (X)MMCCCXLV = 12345
+    (CCCX)MMMMCLIX = 314159
+    (DLXXV)MMMCCLXVII = 578267
+    (MMMCCXV)CDLXVIII = 3215468
+    (MMMMCCX)MMMMCDLXVIII = 4214468
+    (MMMMCCXV)CDLXVIII = 4215468
+    (MMMMCCXV)MMMCDLXVIII = 4218468
+    (MMMMCCXIX)CDLXVIII = 4219468
+    ((XV)MDCCLXXV)MMCCXVI = 16777216
+    ((CCCX)MMMMCLIX)CCLXV = 314159265
+    ((MLXX)MMMDCCXL)MDCCCXXIV = 1073741824
 
 #Finally
 Have a good challenge idea?
